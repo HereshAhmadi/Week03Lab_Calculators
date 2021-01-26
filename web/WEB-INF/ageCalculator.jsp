@@ -21,5 +21,7 @@
             <br>
             <p>${message}</p>
         </form>
+        
+        <a href="Arithmetic">Arithmetic Calculator</a>
     </body>
 </html>
