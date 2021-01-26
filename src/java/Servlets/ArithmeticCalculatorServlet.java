@@ -19,10 +19,25 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/arithmeticCalculator.jsp").forward(request, response);
     }
 
-  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String result = "";
+        String operation = request.getParameter("operation");
+        int first;
+        int second;
+
+        try {
+            first = Integer.parseInt(request.getParameter("first"));
+            second = Integer.parseInt(request.getParameter("second"));
+
+        } catch (Exception e) {
+            result = "Invalid";
+        }
+
+
+        request.setAttribute("result", result);
+        request.getRequestDispatcher("WEB-INF/arithmeticCalculator.jsp").forward(request, response);
     }
 
 }
